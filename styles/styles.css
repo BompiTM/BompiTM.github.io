@@ -19,6 +19,8 @@ a:focus {
 
 body {
     margin: 0;
+    padding: 0;
+    overflow-x: hidden;
     min-height: 100vh;
     background: #000046;
     background: -webkit-linear-gradient(to right, #1CB5E0, #000046);
@@ -33,12 +35,11 @@ nav {
 }
 
 nav .wrapper {
-    position: relative;
+    position: fixed;
     max-width: 1300px;
-    padding: 0 30px;
+    padding: 0 50px;
     height: 70px;
     line-height: 70px;
-    margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
