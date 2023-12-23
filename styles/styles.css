@@ -14,7 +14,7 @@ a {
 a:hover,
 a:focus {
     color: lightgrey;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 body {
@@ -80,6 +80,18 @@ nav .wrapper {
     display: none;
 }
 
+/* Dropdown Menu
+.dropdown .dropdown-content {
+    display: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    position: fixed;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+*/
+
 /* Home Section */
 .big-text {
     position: absolute;
@@ -130,6 +142,10 @@ img:hover {
     cursor: pointer;
 }
 
+.images img.show {
+    display: inline-block;
+}
+
 .notification {
     position: fixed;
     bottom: 10px;
@@ -159,4 +175,29 @@ img:hover {
         height: auto;
         margin-bottom: 10px;
     }
+}
+
+.filter-options {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    text-align: center;
+    margin-top: 18%;
+}
+
+.filter-options label {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}
+
+.filter-options label:hover {
+    color: lightgrey;
+    transition: all 0.3s ease;
+}
+
+.filter-options input[type="radio"] {
+    display: none;
 }

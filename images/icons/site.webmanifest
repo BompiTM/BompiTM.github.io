@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Bompi.me",
+    "short_name": "Bompi.me",
     "icons": [
         {
             "src": "/images/icons/android-chrome-96x96.png",
@@ -8,7 +8,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
+    "theme_color": "#1CB5E0",
     "background_color": "#ffffff",
     "display": "standalone"
 }
