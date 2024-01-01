@@ -112,8 +112,34 @@ nav .wrapper {
     font-size: 30px;
     font-weight: 300;
     text-align: center;
+    margin-top: 10%;
+    white-space: nowrap;
+}
+
+.filter-options {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
     margin-top: 15%;
     white-space: nowrap;
+}
+
+.filter-options label {
+    display: inline-block;
+    margin-inline: 20px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}
+
+.filter-options label:hover {
+    color: lightgrey;
+    transition: all 0.3s ease;
+}
+
+.filter-options input[type="radio"] {
+    display: none;
 }
 
 /* Media Queries */
@@ -175,29 +201,8 @@ img:hover {
         height: auto;
         margin-bottom: 10px;
     }
-}
 
-.filter-options {
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
-    text-align: center;
-    margin-top: 18%;
-}
-
-.filter-options label {
-    display: inline-block;
-    margin-right: 15px;
-    font-size: 16px;
-    color: white;
-    cursor: pointer;
-}
-
-.filter-options label:hover {
-    color: lightgrey;
-    transition: all 0.3s ease;
-}
-
-.filter-options input[type="radio"] {
-    display: none;
+    .filter-options {
+        margin-top: 30%;
+    }
 }
