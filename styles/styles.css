@@ -80,18 +80,6 @@ nav .wrapper {
     display: none;
 }
 
-/* Dropdown Menu
-.dropdown .dropdown-content {
-    display: none;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-    position: fixed;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-*/
-
 /* Home Section */
 .big-text {
     position: absolute;
@@ -204,5 +192,31 @@ img:hover {
 
     .filter-options {
         margin-top: 30%;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .normal-text {
+        font-size: 24px;
+        margin-top: 20%;
+    }
+
+    .images {
+        margin-top: 40%;
+    }
+
+    img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .filter-options {
+        margin-top: 30%;
+    }
+
+    nav .wrapper {
+        padding: 0 10px;
     }
 }
