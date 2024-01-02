@@ -191,32 +191,32 @@ img:hover {
     }
 
     .filter-options {
-        margin-top: 30%;
+        margin-top: 37%;
+        display: flex;
+        flex-direction: column;
     }
 }
 
 @media screen and (max-width: 525px) {
     .normal-text {
-        font-size: 24px;
-        margin-top: 20%;
-    }
-
-    .images {
-        margin-top: 40%;
-    }
-
-    img {
-        width: 100%;
-        max-width: 300px;
-        height: auto;
-        margin-bottom: 10px;
-    }
-
-    .filter-options {
-        margin-top: 30%;
+        font-size: 20px;
+        margin-top: 27%;
     }
 
     nav .wrapper {
         padding: 0 10px;
     }
+
+    .nav-links li a {
+        padding: 5px;
+    }
+
+    ul {
+        padding: 0;
+    }
+
+    .images {
+        margin-top: 60%;
+    }
 }
+
