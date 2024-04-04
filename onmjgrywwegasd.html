@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bompi.me - onmjgrywwegasd</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <base href="https://bompi.me/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="Bompi.me">
+  <meta name="description" content="Bompi.me is a website that me's the Bompi. Or does it Bompi me?">
+
+  <meta property="og:title" content="Bompi.me">
+  <meta property="og:description" content="Bompi.me is a website that me's the Bompi. Or does it Bompi me?">
+  <meta property="og:image" content="https://bompi.me/images/bompi.me.png">
+  <meta property="og:image:alt" content="Bompi.me">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://bompi.me/images/bompi.me.png">
+
+  <link rel="apple-touch-icon" sizes="120x120" href="images/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+  <link rel="manifest" href="images/icons/site.webmanifest">
+  <link rel="shortcut icon" href="images/icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="images/icons/browserconfig.xml">
+  <meta name="theme-color" content="#1CB5E0">
+
+  <style>
+    body {
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-size: 5vw;
+    }
+  </style>
+</head>
+<body>
+<script>
+  function shuffleWord(word) {
+    return word.split('').sort(() => Math.random() - 0.5).join('');
+  }
+
+  const word = "Spring";
+  const shuffledWord = shuffleWord(word);
+
+  const body = document.querySelector('body');
+
+  const wordElement = document.createElement('div');
+  wordElement.textContent = shuffledWord;
+  body.appendChild(wordElement);
+</script>
+</body>
+</html>
