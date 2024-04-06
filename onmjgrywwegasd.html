@@ -1,58 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Bompi.me - onmjgrywwegasd</title>
-  <link rel="stylesheet" href="styles/styles.css">
-  <base href="https://bompi.me/">
+    <meta charset="UTF-8">
+    <title>Bompi.me - Purple Spring Puzzle</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <base href="https://bompi.me/">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="title" content="Bompi.me">
-  <meta name="description" content="Bompi.me is a website that me's the Bompi. Or does it Bompi me?">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Bompi.me">
+    <meta name="description" content="Bompi.me is a website that me's the Bompi. Or does it Bompi me?">
 
-  <meta property="og:title" content="Bompi.me">
-  <meta property="og:description" content="Bompi.me is a website that me's the Bompi. Or does it Bompi me?">
-  <meta property="og:image" content="https://bompi.me/images/bompi.me.png">
-  <meta property="og:image:alt" content="Bompi.me">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://bompi.me/images/bompi.me.png">
+    <meta property="og:title" content="Bompi.me">
+    <meta property="og:description" content="Bompi.me is a website that me's the Bompi. Or does it Bompi me?">
+    <meta property="og:image" content="https://bompi.me/images/bompi.me.png">
+    <meta property="og:image:alt" content="Bompi.me">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bompi.me/images/bompi.me.png">
 
-  <link rel="apple-touch-icon" sizes="120x120" href="images/icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
-  <link rel="manifest" href="images/icons/site.webmanifest">
-  <link rel="shortcut icon" href="images/icons/favicon.ico">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-config" content="images/icons/browserconfig.xml">
-  <meta name="theme-color" content="#1CB5E0">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+    <link rel="manifest" href="images/icons/site.webmanifest">
+    <link rel="shortcut icon" href="images/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="images/icons/browserconfig.xml">
+    <meta name="theme-color" content="#1CB5E0">
 
-  <style>
-    body {
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      padding: 0;
-      font-size: 5vw;
-    }
-  </style>
+    <style>
+        #puzzleButton {
+            font-size: 16px;
+            background-color: transparent;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #puzzleButton:hover {
+            transform: scale(1.2);
+            transition: all 0.2s;
+        }
+
+        #puzzleContainer {
+            width: 300px;
+            height: 300px;
+            border: 2px solid white;
+            display: grid;
+            margin-top: 25%;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+
+        .piece {
+            border: 2px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+    </style>
 </head>
 <body>
+
+<div class="normal-text">
+    Download your grid and post it in #request-role with the missing letters.<br>
+    Please don't spoil it for others.<br>
+    <button onclick="function screenshot() {
+        const canvas = document.createElement('canvas');
+        canvas.width = 300;
+        canvas.height = 300;
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'black';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        const pieces = document.querySelectorAll('.piece');
+        pieces.forEach((piece, i) => {
+            const x = i % 4 * 75;
+            const y = Math.floor(i / 4) * 100;
+            ctx.fillStyle = 'white';
+            ctx.fillRect(x, y, 75, 100);
+            ctx.font = '24px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillStyle = 'black';
+            ctx.fillText(piece.textContent, x + 37.5, y + 50);
+        });
+
+        const dataUrl = canvas.toDataURL();
+        const a = document.createElement('a');
+        a.href = dataUrl;
+        a.download = 'puzzle.png';
+        a.click();
+
+        }
+    screenshot()" id="puzzleButton">> Download <
+    </button>
+
+    <div id="puzzleContainer" class="big-text"></div>
+</div>
+
 <script>
-  function shuffleWord(word) {
-    return word.split('').sort(() => Math.random() - 0.5).join('');
-  }
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
 
-  const word = "Spring";
-  const shuffledWord = shuffleWord(word);
+    function createPuzzle() {
+        const puzzleContainer = document.getElementById('puzzleContainer');
+        puzzleContainer.innerHTML = '';
 
-  const body = document.querySelector('body');
+        const word = "PurpleSpring";
+        const letters = word.split('');
 
-  const wordElement = document.createElement('div');
-  wordElement.textContent = shuffledWord;
-  body.appendChild(wordElement);
+        const shuffledLetters = shuffleArray(letters);
+
+        const markedIndices = [];
+        while (markedIndices.length < 3) {
+            const randomIndex = Math.floor(Math.random() * letters.length);
+            if (!markedIndices.includes(randomIndex)) {
+                markedIndices.push(randomIndex);
+                shuffledLetters[randomIndex] = "?";
+            }
+        }
+
+        shuffledLetters.forEach(letter => {
+            const piece = document.createElement('div');
+            piece.classList.add('piece');
+            piece.textContent = letter;
+            puzzleContainer.appendChild(piece);
+        });
+    }
+
+    window.addEventListener('load', createPuzzle);
 </script>
 </body>
 </html>
