@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bompi.me - Home</title>
+    <title>Bompi.me - Kacky</title>
     <link rel="stylesheet" href="styles/styles.css">
     <base href="https://bompi.me/">
 
@@ -39,6 +39,25 @@
     </div>
 </nav>
 
-<div class="big-text">Coming soon™</div>
+<div class="normal-text">Click on an image to copy its URL.</div>
+
+<div class="filter-options">
+    <label id="numbersRadio"><input type="radio" name="filter" value="numbers" checked>Numbers</label>
+    <label id="miscRadio"><input type="radio" name="filter" value="misc">Misc</label>
+</div>
+
+<div class="images" id="numbersImages">
+    <img class="clickable-image" data-url="http://download.dashmap.live/32f2a95b-2590-40c4-8370-47368406f6fc/2x1_numbers_276.bik" src="images/kacky/numbers/276.jpg" alt="276">
+</div>
+
+<div class="images" id="miscImages">
+
+</div>
+
+<div class="notification" id="copyNotification">Copied URL to clickboard!</div>
+
+<script src="scripts/copyToClipboard.js"></script>
+<script src="scripts/filterImages.js"></script>
+
 </body>
 </html>
