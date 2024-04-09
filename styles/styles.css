@@ -230,7 +230,7 @@ img:hover {
     }
 }
 
-@media screen and (max-width: 525px) {
+@media screen and (max-width: 635px) {
     .normal-text {
         font-size: 20px;
         margin-top: 80px;
