@@ -27,6 +27,16 @@ body {
     background: #000046;
     background: -webkit-linear-gradient(to right, #1CB5E0, #000046);
     background: linear-gradient(to right, #1CB5E0, #000046);
+    scrollbar-width: none;
+    scrollbar-color: transparent transparent;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
 }
 
 nav {
@@ -139,6 +149,8 @@ nav .wrapper {
     align-items: center;
     flex-wrap: wrap;
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     margin-top: 250px;
 }
 
