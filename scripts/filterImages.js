@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         document.querySelectorAll(".filter-options label").forEach(function (filterRadioContainer) {
-            filterRadioContainer.style.fontSize = "16px";
+            filterRadioContainer.style.transform = "scale(1)";
         });
 
         const filterImagesContainer = document.getElementById(filter + 'Images');
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const filterRadioContainer = document.getElementById(filter + 'Radio');
         if (filterRadioContainer) {
-            filterRadioContainer.style.fontSize = "18px";
+            filterRadioContainer.style.transform = "scale(1.2)";
         }
     }
 
