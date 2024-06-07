@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Bompi.me - Seasons</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/images.css">
+    <link rel="stylesheet" href="styles/small.css">
     <base href="https://bompi.me/">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,17 +30,7 @@
     <meta name="theme-color" content="#1CB5E0">
 </head>
 <body>
-<nav>
-    <div class="wrapper">
-        <div class="logo"><a href="/" title="Home">Bompi.me</a></div>
-        <ul class="nav-links">
-            <li><a href="/" title="Home">Home</a></li>
-            <li><a href="/seasons" title="Seasons">Seasons</a></li>
-            <li><a href="/kacky" title="Kacky">Kacky</a></li>
-            <li><a href="/discord" title="Discords">Discords</a></li>
-        </ul>
-    </div>
-</nav>
+<div id="nav-container"></div>
 
 <div class="normal-text">Click on an image to copy its URL.</div>
 
@@ -614,6 +607,7 @@
 
 <div class="notification" id="copyNotification">Copied URL to clickboard!</div>
 
+<script src="scripts/nav.js"></script>
 <script src="scripts/copyToClipboard.js"></script>
 <script src="scripts/filterImages.js"></script>
 </body>
