@@ -6,14 +6,12 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="styles/small.css">
+
     <base href="https://bompi.me/">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Bompi.me">
     <meta name="description" content="Bompi.me is a website that me's the Bompi. Or does it Bompi me?">
 
-    <meta property="og:title" content="Bompi.me">
-    <meta property="og:description" content="Bompi.me is a website that me's the Bompi. Or does it Bompi me?">
     <meta property="og:image" content="https://bompi.me/images/bompi.me.png">
     <meta property="og:image:alt" content="Bompi.me">
     <meta name="twitter:card" content="summary_large_image">
@@ -29,12 +27,25 @@
     <meta name="theme-color" content="#1CB5E0">
 </head>
 <body>
-<div id="nav-container"></div>
+<nav>
+    <div class="wrapper">
+        <div class="logo"><a href="/" title="Home">Bompi.me</a></div>
+        <ul class="nav-links">
+            <li><a onclick="loadPage('index')" title="Home">Home</a></li>
+            <li><a onclick="loadPage('seasons')" title="Seasons">Seasons</a></li>
+            <li><a onclick="loadPage('kacky')" title="Kacky">Kacky</a></li>
+            <li><a onclick="loadPage('discord')" title="Discords">Discords</a></li>
+        </ul>
+    </div>
+</nav>
 
-<main>
+<main id="main">
     <div class="big-text">Coming soon™</div>
 </main>
 
-<script src="scripts/nav.js"></script>
+<script>async function loadPage(pageName) {
+    const response = await fetch(`./pages/${pageName}.html`);
+    document.getElementById('main').innerHTML = await response.text();
+}</script>
 </body>
 </html>
