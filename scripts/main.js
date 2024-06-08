@@ -1,11 +1,31 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const params = new URLSearchParams(window.location.search);
+    const page = params.get('page') || 'index';
+    loadPage(page).then(() => console.log('Page loaded:', page));
+    window.addEventListener('popstate', function() {
+        const path = window.location.pathname.split('/').pop();
+        loadPage(path || 'index').then(() => console.log('Page loaded:', path));
+    });
+});
+
 async function loadPage(pageName) {
     if (pageName === 'index') {
         document.getElementById('main').innerHTML = '<div class="big-text">Coming soon™</div>';
         return;
     }
-    const response = await fetch(`../pages/${pageName}.html`);
-    document.getElementById('main').innerHTML = await response.text();
-    initializeScripts();
+    try {
+        const response = await fetch(`../pages/${pageName}.html`);
+        document.getElementById('main').innerHTML = await response.text();
+        initializeScripts();
+    } catch (error) {
+        document.getElementById('main').innerHTML = '<div class="big-text">Page not found</div>';
+    }
+}
+
+function navigate(event, pageName) {
+    event.preventDefault();
+    history.pushState(null, '', `/${pageName}`);
+    loadPage(pageName).then(() => console.log('Page loaded:', pageName));
 }
 
 function initializeScripts() {
@@ -55,7 +75,3 @@ function initializeScripts() {
         filterImages(defaultFilter.value);
     }
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-    initializeScripts();
-});
