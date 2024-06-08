@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/images.css">
 
     <base href="https://bompi.me/">
 
@@ -43,9 +44,6 @@
     <div class="big-text">Coming soon™</div>
 </main>
 
-<script>async function loadPage(pageName) {
-    const response = await fetch(`./pages/${pageName}.html`);
-    document.getElementById('main').innerHTML = await response.text();
-}</script>
+<script src="scripts/main.js"></script>
 </body>
 </html>
